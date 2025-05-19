@@ -8,7 +8,7 @@ const TheAnswer: React.FC = () => {
 
   return (
     <div className="w-full">
-      <h2 className="text-3xl font-semibold mb-4 text-center text-[var(--foreground)]">
+      <h2 className="text-3xl font-medium tracking-widest mb-4 text-center uppercase text-[var(--foreground)]">
         {isCurrentOrPast ? "Yup" : "Nope"}
       </h2>
     </div>

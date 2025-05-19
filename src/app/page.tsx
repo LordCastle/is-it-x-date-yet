@@ -12,7 +12,7 @@ export default function Home() {
           <header className="row-start-1 flex gap-[24px] flex-wrap items-center justify-center">
             <h1 className="text-3xl sm:text-5xl font-bold">Is it X yet?</h1>
           </header>
-          <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+          <main className="flex flex-col gap-16 row-start-2 items-center sm:items-start">
             <TheQuestion />
             <TheAnswer />
           </main>
