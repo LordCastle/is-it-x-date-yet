@@ -4,8 +4,9 @@ A simple application that tells you whether a selected date and time has passed 
 
 ## Features
 
-- **Memory**: Browser remembers your selected date/time
-- **Smart Defaults**: Automatically sets to current local date/time on first load
+- **Shareable Links**: Share specific dates and times with others through URLs
+- **Smart Defaults**: Automatically sets to current local date/time when no date is specified
+- **Real-time Updates**: Continuously checks if the selected time has been reached
 
 ---
 

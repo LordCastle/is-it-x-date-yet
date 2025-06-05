@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 
 interface DateTimeContextType {
   selectedDateTime: string;
@@ -26,13 +27,20 @@ const getCurrentDateTime = () => {
 };
 
 export function DateTimeProvider({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const [selectedDateTime, setSelectedDateTime] = useState<string>(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("selectedDateTime") || getCurrentDateTime();
-    }
-    return getCurrentDateTime();
+    // Get the datetime from URL query parameter or use current datetime
+    return searchParams.get("datetime") || getCurrentDateTime();
   });
   const [isCurrentOrPast, setIsCurrentOrPast] = useState<boolean>(false);
+
+  // Update URL when selectedDateTime changes
+  useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("datetime", selectedDateTime);
+    router.replace(`?${params.toString()}`);
+  }, [selectedDateTime, router, searchParams]);
 
   useEffect(() => {
     const checkDateTime = () => {
@@ -46,11 +54,6 @@ export function DateTimeProvider({ children }: { children: React.ReactNode }) {
     const interval = setInterval(checkDateTime, 1000);
 
     return () => clearInterval(interval);
-  }, [selectedDateTime]);
-
-  // Save to localStorage whenever selectedDateTime changes
-  useEffect(() => {
-    localStorage.setItem("selectedDateTime", selectedDateTime);
   }, [selectedDateTime]);
 
   return (

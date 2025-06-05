@@ -33,7 +33,7 @@ const TheAnswer: React.FC = () => {
   }, [isCurrentOrPast]);
 
   return (
-    <div className="w-full min-h-[4rem] flex items-center justify-center">
+    <section className="the-answer w-full flex items-center justify-center gap-16">
       <h2
         className={`text-3xl font-medium tracking-widest mb-4 text-center uppercase text-[var(--foreground)]
           transition-opacity duration-600 h-[2rem] ${
@@ -42,7 +42,7 @@ const TheAnswer: React.FC = () => {
       >
         {answer}
       </h2>
-    </div>
+    </section>
   );
 };
 

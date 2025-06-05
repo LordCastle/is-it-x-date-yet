@@ -10,7 +10,7 @@ export default function Home() {
           <h1 className="text-3xl sm:text-5xl font-bold">Is it X yet?</h1>
         </header>
 
-        <main className="flex flex-col gap-16 row-start-2 items-center sm:items-start">
+        <main className="flex flex-col gap-16 row-start-2  h-full items-center sm:items-start">
           <TheQuestion />
           <TheAnswer />
         </main>

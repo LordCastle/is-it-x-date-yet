@@ -11,8 +11,8 @@ const TheQuestion: React.FC = () => {
   };
 
   return (
-    <div className="w-full">
-      <h2 className="text-lg sm:text-3xl font-bold mb-4 flex flex-col gap-2 sm:flex-row items-center justify-center">
+    <section className="the-question w-full mt-10">
+      <h2 className="text-lg sm:text-3xl font-bold flex flex-col gap-2 sm:flex-row items-center justify-center">
         <span>Is it</span>
         <input
           type="datetime-local"
@@ -22,7 +22,7 @@ const TheQuestion: React.FC = () => {
         />
         <span>yet?</span>
       </h2>
-    </div>
+    </section>
   );
 };
 
