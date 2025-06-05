@@ -1,6 +1,5 @@
 import TheAnswer from "@/components/TheAnswer";
 import TheQuestion from "@/components/TheQuestion";
-import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { DateTimeProvider } from "@/context/DateTimeContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 
@@ -17,9 +16,6 @@ export default function Home() {
             <TheAnswer />
           </main>
           <footer className="row-start-3 flex flex-col gap-[24px] flex-wrap items-center justify-center mt-10">
-            <section className="flex flex-col justify-center items-center gap-2">
-              Theme: <ThemeSwitcher />
-            </section>
             <p>&copy;2025 Chris Castle</p>
           </footer>
         </div>
